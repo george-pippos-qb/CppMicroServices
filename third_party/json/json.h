@@ -1146,7 +1146,7 @@ private:
     bool bool_;
     char* string_; // if allocated_, ptr to { unsigned, char[] }.
     ObjectValues* map_;
-  } value_;
+  } value_{};
 
   struct {
     // Really a ValueType, but types should agree for bitfield packing.

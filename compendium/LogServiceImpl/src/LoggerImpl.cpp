@@ -2,6 +2,7 @@
 
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/fmt.h"
 
 #include "cppmicroservices/ServiceReference.h"
 
@@ -68,14 +69,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::audit(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::trace);
-            m_Logger->trace(format, arg);
+            m_Logger->trace(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::audit(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::trace);
-            m_Logger->trace(format, arg1, arg2);
+            m_Logger->trace(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
         void
@@ -109,14 +110,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::debug(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::debug);
-            m_Logger->debug(format, arg);
+            m_Logger->debug(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::debug(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::debug);
-            m_Logger->debug(format, arg1, arg2);
+            m_Logger->debug(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
 	void
@@ -150,14 +151,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::error(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::err);
-            m_Logger->error(format, arg);
+            m_Logger->error(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::error(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::err);
-            m_Logger->error(format, arg1, arg2);
+            m_Logger->error(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
         void
@@ -191,14 +192,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::info(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::info);
-            m_Logger->info(format, arg);
+            m_Logger->info(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::info(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::info);
-            m_Logger->info(format, arg1, arg2);
+            m_Logger->info(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
           void
@@ -232,14 +233,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::trace(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::trace);
-            m_Logger->trace(format, arg);
+            m_Logger->trace(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::trace(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::trace);
-            m_Logger->trace(format, arg1, arg2);
+            m_Logger->trace(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
           void
@@ -273,14 +274,14 @@ namespace cppmicroservices::logservice
         LoggerImpl::warn(std::string const& format, std::string const& arg)
         {
             m_Logger->set_level(spdlog::level::warn);
-            m_Logger->warn(format, arg);
+            m_Logger->warn(fmt::vformat(format, fmt::make_format_args(arg)));
         }
 
         void
         LoggerImpl::warn(std::string const& format, std::string const& arg1, std::string const& arg2)
         {
             m_Logger->set_level(spdlog::level::warn);
-            m_Logger->warn(format, arg1, arg2);
+            m_Logger->warn(fmt::vformat(format, fmt::make_format_args(arg1, arg2)));
         }
 
         void
