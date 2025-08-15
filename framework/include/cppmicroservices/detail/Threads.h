@@ -232,7 +232,7 @@ namespace cppmicroservices
             }
         };
 
-#if !defined(__GNUC__) || __GNUC__ > 4
+#if !defined(__GNUC__) || __GNUC__ > 4 || __GLIBCXX__ >= 20150422L || __cplusplus > 202002L
         // The std::atomic_load() et.al. overloads for std::shared_ptr are only available
         // in libstdc++ since GCC 5.0. Visual Studio 2013 has it, but the Clang version
         // is unknown so far.
